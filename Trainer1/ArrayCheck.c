@@ -1,33 +1,34 @@
 #include <stdio.h>
 
+
+
 int main(void) {
 	// your code goes here
-	int a[100],n,m,x,f=0;
+	int a[100],n,m,x,f=0,i,j;
 	scanf("%d",&n);
-	for(int i=0;i<n;i++)
+	for( i=0;i<n;i++)
 	{
-		scanf("%d",&a);
+		scanf("%d",&a[i]);
 	}
-	for(int j=0;j<n;)
+	for(i=0;i<n-1;)
 	{
-		x=n-j;
-		if(x>a[j])
+		x=n-i;
+		if(x>a[i])
 		{
-			m=a[j];
-			j+=m;
+			m=a[i];
+			i=i+m;
 		}
 		else
 		{
 			f=1;
+			printf("False");
+			break;
 		}
+		
 	}
 	if(f==0)
 	{
-		printf("True");
-	}
-	else
-	{
-		printf("False");
+	printf("True");
 	}
 	return 0;
 }
